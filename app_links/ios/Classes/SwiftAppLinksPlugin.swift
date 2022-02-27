@@ -69,6 +69,7 @@ public class SwiftAppLinksPlugin: NSObject, FlutterPlugin {
 
     if (initialLink == nil) {
       initialLink = link
+      methodChannel.invokeMethod("onAppLink", arguments: initialLink)
     } else {
       methodChannel.invokeMethod("onAppLink", arguments: latestLink)
     }
